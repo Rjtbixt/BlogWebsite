@@ -1,10 +1,15 @@
 from flask import Flask, render_template, request
 import requests
 import smtplib
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
-my_email = "rjtbixt@gmail.com"
-password = "drys rjct lprr pbqq"
-add = "rajatbishtalm@gmail.com"
+
+
+my_email = os.environ.get("MY_EMAIL")
+password = os.environ.get("MY_EMAIL_PASSWORD")
+add = os.environ.get("TO_EMAIL")
 
 
 def send_email(name, email, phone, message):
